@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./index.module.css";
 
 import { ReactComponent as Logo } from "../../assets/image.svg";
+import { Button } from "../button";
 
 export const ImageArea: React.FC = () => {
   return (
@@ -18,7 +19,7 @@ export const ImageArea: React.FC = () => {
         <p className={styles.subText}>Or</p>
         <label>
           <input type="file" className={styles.file} />
-          <p className={styles.btn}>Choose a file</p>
+          <Button>Choose a file</Button>
         </label>
       </div>
     </>

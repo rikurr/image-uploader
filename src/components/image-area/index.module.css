@@ -57,6 +57,7 @@
 
 .subText {
   margin-top: 18px;
+  margin-bottom: 30px;
   font-family: Poppins;
   font-style: normal;
   font-weight: 500;
@@ -68,25 +69,4 @@
 
 .file {
   display: none;
-}
-
-.btn {
-  margin: 0 auto;
-  margin-top: 30px;
-  border: none;
-  width: 101px;
-  height: 31.98px;
-  background: #2f80ed;
-  border-radius: 8px;
-  color: #fff;
-  font-size: 14px;
-  line-height: 2.2;
-}
-
-.btn:focus {
-  outline: none;
-}
-
-.btn:hover {
-  opacity: 0.8;
 }
