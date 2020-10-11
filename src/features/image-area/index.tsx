@@ -1,10 +1,26 @@
-import React from "react"
-import styles from './index.module.css'
+import React from "react";
+import styles from "./index.module.css";
 
-export const ImageArea:React.FC = () => {
+import { ReactComponent as Logo } from "../../assets/image.svg";
+
+export const ImageArea: React.FC = () => {
   return (
     <>
-      <h1>hello</h1>
+      <div className={styles.container}>
+        <h1 className={styles.title}>Upload your image</h1>
+        <p className={styles.text}>File should be Jpeg, Png,...</p>
+        <div className={styles.dragAndDrop}>
+          <div className={styles.logoContainer}>
+            <Logo />
+          </div>
+          <p className={styles.logoText}>Drag & Drop your image here</p>
+        </div>
+        <p className={styles.subText}>Or</p>
+        <label>
+          <input type="file" className={styles.file} />
+          <p className={styles.btn}>Choose a file</p>
+        </label>
+      </div>
     </>
-  )
-}
+  );
+};
