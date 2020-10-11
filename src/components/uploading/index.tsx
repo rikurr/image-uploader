@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./index.module.css";
 
-export const ProgressBar: React.FC = () => {
+export const Uploading: React.FC = () => {
   return (
     <div className={styles.container}>
       <p className={styles.text}>Uploading... </p>

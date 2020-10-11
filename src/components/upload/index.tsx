@@ -4,7 +4,7 @@ import styles from "./index.module.css";
 import { ReactComponent as Logo } from "../../assets/image.svg";
 import { Button } from "../button";
 
-export const ImageArea: React.FC = () => {
+export const Upload: React.FC = () => {
   return (
     <>
       <div className={styles.container}>
