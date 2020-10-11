@@ -1,0 +1,33 @@
+.container {
+  width: 400.36px;
+  height: 143.57px;
+  background: #fafafb;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  padding: 2rem;
+}
+
+.text {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 27px;
+  letter-spacing: -0.035em;
+  color: #4f4f4f;
+}
+
+.bar {
+  width: 340.71px;
+  height: 6px;
+  background: #f2f2f2;
+  border-radius: 8px;
+  margin-top: 30px;
+}
+
+.done {
+  width: 23%;
+  height: 100%;
+  background: #2f80ed;
+  border-radius: 8px;
+}
