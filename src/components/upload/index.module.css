@@ -38,6 +38,7 @@
   border: 1px dashed #97bef4;
   box-sizing: border-box;
   border-radius: 12px;
+  text-align: center;
 }
 
 .logoContainer {
