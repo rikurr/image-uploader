@@ -11,6 +11,11 @@ function App() {
       <div className="App">
         <ImageArea />
       </div>
+      <footer className="App-footer">
+        <a href="https://github.com/rikurr/image-uploader" target="brank">
+          Git Hub
+        </a>
+      </footer>
     </ToastProvider>
   );
 }
