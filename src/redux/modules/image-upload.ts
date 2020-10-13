@@ -8,6 +8,7 @@ type imageUploadState = {
     id: string;
     path: string;
   };
+  progress: number;
 };
 
 type Payload = {
@@ -25,6 +26,7 @@ const initialState: imageUploadState = {
     id: "",
     path: "",
   },
+  progress: 0,
 };
 
 export const imageUploadSlice = createSlice({
@@ -43,6 +45,9 @@ export const imageUploadSlice = createSlice({
     setImage: (state, action: PayloadAction<Payload>) => {
       state.image = action.payload;
     },
+    progressCounter: (state, action: PayloadAction<number>) => {
+      state.progress = state.progress + action.payload;
+    },
   },
 });
 
@@ -51,6 +56,7 @@ export const {
   successLoadingAction,
   failedLoadingAction,
   setImage,
+  progressCounter,
 } = imageUploadSlice.actions;
 
 export const imageUploadAsync = (event: Event<HTMLInputElement>): AppThunk => (
@@ -67,11 +73,11 @@ export const imageUploadAsync = (event: Event<HTMLInputElement>): AppThunk => (
 
     const uploadRef = storage.ref("images").child(fileName);
     const uploadTask = uploadRef.put(file[0]);
+    dispatch(progressCounter(50));
     uploadTask
       .then(() => {
+        dispatch(progressCounter(50));
         uploadTask.snapshot.ref.getDownloadURL().then((URL: string) => {
-          console.log(URL);
-          console.log(fileName);
           const newImage = { id: fileName, path: URL };
           dispatch(setImage(newImage));
           dispatch(successLoadingAction());

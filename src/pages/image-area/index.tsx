@@ -19,5 +19,6 @@ export const ImageArea: React.FC = () => {
   if (status === "uploaded") {
     return <Uploaded />;
   }
+
   return <></>;
 };
