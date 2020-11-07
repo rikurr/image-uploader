@@ -24,7 +24,8 @@ export const Upload: React.FC = () => {
     dispatch(imageUploadAsync(acceptedFiles[0]));
   }, []);
 
-  const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop });
+  const { getRootProps, getInputProps } = useDropzone({ onDrop });
+
   return (
     <>
       <div className={styles.container}>

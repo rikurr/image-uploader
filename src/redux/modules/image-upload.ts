@@ -16,10 +16,6 @@ type Payload = {
   path: string;
 };
 
-type Event<T = EventTarget> = {
-  target: T;
-};
-
 const initialState: imageUploadState = {
   status: "upload",
   image: {
@@ -61,7 +57,6 @@ export const {
 
 export const imageUploadAsync = (file: File): AppThunk => (dispatch) => {
   dispatch(startLoadingAction());
-  console.log(file);
   const S = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
   const N = 16;
   const fileName = Array.from(crypto.getRandomValues(new Uint32Array(N)))
