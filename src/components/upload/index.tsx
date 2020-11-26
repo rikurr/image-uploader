@@ -17,12 +17,15 @@ export const Upload: React.FC = () => {
         dispatch(imageUploadAsync(file[0]));
       }
     },
-    []
+    [dispatch]
   );
 
-  const onDrop = React.useCallback((acceptedFiles) => {
-    dispatch(imageUploadAsync(acceptedFiles[0]));
-  }, []);
+  const onDrop = React.useCallback(
+    (acceptedFiles) => {
+      dispatch(imageUploadAsync(acceptedFiles[0]));
+    },
+    [dispatch]
+  );
 
   const { getRootProps, getInputProps } = useDropzone({ onDrop });
 

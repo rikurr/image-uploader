@@ -4,11 +4,14 @@ import styles from "./index.module.css";
 import { useToasts } from "react-toast-notifications";
 import CopyToClipboard from "react-copy-to-clipboard";
 
-import { useSelector } from "react-redux";
-import { selectImageUpload } from "../../redux/modules/image-upload";
+type Props = {
+  image: {
+    id: string;
+    path: string;
+  };
+};
 
-export const Uploaded: React.FC = () => {
-  const { image } = useSelector(selectImageUpload);
+export const Uploaded: React.FC<Props> = ({ image }) => {
   const { addToast } = useToasts();
 
   const handleClick = React.useCallback(() => {
@@ -16,7 +19,7 @@ export const Uploaded: React.FC = () => {
       appearance: "success",
       autoDismiss: true,
     });
-  }, []);
+  }, [addToast]);
 
   return (
     <div className={styles.container}>

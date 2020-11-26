@@ -57,10 +57,13 @@ export const {
 
 export const imageUploadAsync = (file: File): AppThunk => (dispatch) => {
   dispatch(startLoadingAction());
-  const S = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-  const N = 16;
-  const fileName = Array.from(crypto.getRandomValues(new Uint32Array(N)))
-    .map((n) => S[n % S.length])
+  const rundom =
+    "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+  const nameLength = 16;
+  const fileName = Array.from(
+    crypto.getRandomValues(new Uint32Array(nameLength))
+  )
+    .map((n) => rundom[n % rundom.length])
     .join("");
   const uploadRef = storage.ref("images").child(fileName);
   const uploadTask = uploadRef.put(file);

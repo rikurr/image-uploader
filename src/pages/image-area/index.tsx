@@ -8,16 +8,17 @@ import { selectImageUpload } from "../../redux/modules/image-upload";
 
 export const ImageArea: React.FC = () => {
   const imageUpload = useSelector(selectImageUpload);
-  const { status } = imageUpload;
+  const { status, progress, image } = imageUpload;
 
+  // 画面切り替え
   if (status === "upload") {
     return <Upload />;
   }
   if (status === "uploading") {
-    return <Uploading />;
+    return <Uploading progress={progress} />;
   }
   if (status === "uploaded") {
-    return <Uploaded />;
+    return <Uploaded image={image} />;
   }
 
   return <></>;
