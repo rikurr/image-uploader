@@ -2,11 +2,12 @@
 
 https://image-uploader-839f1.web.app/
 
-## lib
+## stack
 
 - React
+- TypeScript
 - Firebase Cloud Storage
-- Css Modules
+- CSS Modules
 - Redux-Toolkit
 - react-dropzone
 - react-toast-notifications
