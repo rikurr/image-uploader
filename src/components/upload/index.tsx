@@ -1,32 +1,16 @@
 import React from "react";
-import { useDispatch } from "react-redux";
 import { useDropzone } from "react-dropzone";
 
 import styles from "./index.module.css";
 import { ReactComponent as Logo } from "../../assets/image.svg";
 import { Button } from "../button";
-import { imageUploadAsync } from "../../redux/modules/image-upload";
 
-export const Upload: React.FC = () => {
-  const dispatch = useDispatch();
+type Props = {
+  handleUpload: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  onDrop: (file: File[]) => void;
+};
 
-  const uploadImage = React.useCallback(
-    (event: React.ChangeEvent<HTMLInputElement>) => {
-      const file = event.target.files;
-      if (file) {
-        dispatch(imageUploadAsync(file[0]));
-      }
-    },
-    [dispatch]
-  );
-
-  const onDrop = React.useCallback(
-    (acceptedFiles) => {
-      dispatch(imageUploadAsync(acceptedFiles[0]));
-    },
-    [dispatch]
-  );
-
+export const Upload: React.FC<Props> = ({ handleUpload, onDrop }) => {
   const { getRootProps, getInputProps } = useDropzone({ onDrop });
 
   return (
@@ -43,7 +27,7 @@ export const Upload: React.FC = () => {
         </div>
         <p className={styles.subText}>Or</p>
         <label>
-          <input type="file" onChange={uploadImage} className={styles.file} />
+          <input type="file" onChange={handleUpload} className={styles.file} />
           <Button>Choose a file</Button>
         </label>
       </div>

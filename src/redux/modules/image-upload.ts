@@ -1,4 +1,4 @@
-import { createSlice, Observable, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { AppThunk, RootState } from "../store";
 import { storage } from "../../firebase/index";
 
